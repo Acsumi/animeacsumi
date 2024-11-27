@@ -1,0 +1,52 @@
+{
+  "short_name": "Acsumi",
+  "name": "Acsumico",
+  "icons": [
+    {
+      "src": "/icons/yato32.ico",
+      "sizes": "32x32",
+      "type": "image/ico"
+    },
+    {
+      "src": "/icons/yato48.ico",
+      "sizes": "48x48",
+      "type": "image/ico"
+    }
+    ,
+    {
+      "src": "/icons/yato64.ico",
+      "sizes": "64x64",
+      "type": "image/ico"
+    },
+    {
+      "src": "/icons/yato128.ico",
+      "sizes": "128x128",
+      "type": "image/ico"
+    },
+    {
+      "src": "/icons/yato192.ico",
+      "sizes": "192x192",
+      "type": "image/ico"
+    },
+    {
+      "src": "/icons/yato256.ico",
+      "sizes": "256x256",
+      "type": "image/ico"
+    },
+    {
+      "src": "/icons/yato512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/yato1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "orientation":"any",
+  "theme_color": "#111111",
+  "background_color":"#ffffff"
+}
