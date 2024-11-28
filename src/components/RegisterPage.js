@@ -19,7 +19,7 @@ const RegisterPage = () => {
     try {
       // Realiza la solicitud Post
       const response = await fetch(
-        "Http://localhost:4000/register",
+        "https://backacsumi.onrender.com/register",
         {
           method: "POST",
           headers: {
