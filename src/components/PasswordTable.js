@@ -26,7 +26,7 @@ const PasswordTable = () => {
         headers: { userId },
       })
       .then((response) => setPasswords(response.data))
-      .catch((error) => console.error("Error al obtener contraseñas", error));
+      .catch((error) => console.error("Error al obtener anime", error));
 
     // Verificar suscripción y suscribirse si no está suscrito
     if (!localStorage.getItem('isSubscribed')) {
@@ -103,7 +103,7 @@ const PasswordTable = () => {
         },
         body: JSON.stringify({
           userId: userId,
-          message: `Se ha guardado la contraseña para ${newPassword.nombre}.`,
+          message: `Se ha guardado el anime para ${newPassword.nombre}.`,
         }),
       });
   
@@ -151,7 +151,7 @@ const PasswordTable = () => {
   
         const addRequest = objectStore.add(password);
         addRequest.onsuccess = () => {
-          console.log("Contraseña guardada en IndexedDB");
+          console.log("anime guardada en IndexedDB");
           resolve();
         };
         addRequest.onerror = (error) => {

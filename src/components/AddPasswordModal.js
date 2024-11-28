@@ -82,7 +82,7 @@ const AddPasswordModal = ({
               Calificacion
             </label>
             <input
-              type="password"
+              type="text"
               name="password"
               id="password"
               placeholder="Contraseña"
