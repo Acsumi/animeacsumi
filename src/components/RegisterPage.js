@@ -156,7 +156,7 @@ const RegisterPage = () => {
         <div className="mt-8 text-center">
           <span className="text-md text-gray-600">¿Ya tienes una cuenta?</span>{" "}
           <a
-            href="login"
+            href="/login"
             className="text-md font-medium text-pink-500 hover:underline"
           >
             Inicia Sesión aquí
