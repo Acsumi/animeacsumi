@@ -254,27 +254,35 @@ return (
     </div>
 
     {/* Tabla de contraseñas */}
-    <div>
-  <table>
+    <div className="container mx-auto mt-4">
+  <table className="table-auto w-full border-collapse border border-gray-200">
     <thead>
-      <tr>
-        <th>Título</th>
-        <th>Género</th>
-        <th>Aplicación</th>
-        <th>Calificación</th>
+      <tr className="bg-gray-100">
+        <th className="border border-gray-200 px-4 py-2">Título</th>
+        <th className="border border-gray-200 px-4 py-2">Género</th>
+        <th className="border border-gray-200 px-4 py-2">Aplicación</th>
+        <th className="border border-gray-200 px-4 py-2">Calificación</th>
       </tr>
     </thead>
     <tbody>
-      {passwords.map((password) => (
-        <tr key={password._id}>
-          <td>{password.nombre}</td>
-          <td>{password.tipo_elemento}</td>
-          <td>
-            <a href={password.url} target="_blank" rel="noopener noreferrer">
+      {passwords.map((password, index) => (
+        <tr
+          key={password._id}
+          className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}
+        >
+          <td className="border border-gray-200 px-4 py-2">{password.nombre}</td>
+          <td className="border border-gray-200 px-4 py-2">{password.tipo_elemento}</td>
+          <td className="border border-gray-200 px-4 py-2">
+            <a
+              href={password.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
               {password.url}
             </a>
           </td>
-          <td>{password.password}</td>
+          <td className="border border-gray-200 px-4 py-2">{password.password}</td>
         </tr>
       ))}
     </tbody>
