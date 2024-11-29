@@ -3,6 +3,7 @@ import axios from "axios";
 import { IconEye, IconEyeOff, IconCopy, IconCheck, IconEdit, IconPlus, IconTrash} from "@tabler/icons-react";
 import AddPasswordModal from "./AddPasswordModal";
 import { data } from "autoprefixer";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const PasswordTable = () => {
   const [passwords, setPasswords] = useState([]);
@@ -254,41 +255,32 @@ return (
     </div>
 
     {/* Tabla de contraseñas */}
-    <div className="container mx-auto mt-4">
-  <table className="table-auto w-full border-collapse border border-gray-200">
-    <thead>
-      <tr className="bg-gray-100">
-        <th className="border border-gray-200 px-4 py-2">Título</th>
-        <th className="border border-gray-200 px-4 py-2">Género</th>
-        <th className="border border-gray-200 px-4 py-2">Aplicación</th>
-        <th className="border border-gray-200 px-4 py-2">Calificación</th>
+    <div className="container-fluid mt-4">
+  <table className="table table-striped table-bordered w-100">
+    <thead className="bg-primary text-white">
+      <tr>
+        <th scope="col">Título</th>
+        <th scope="col">Género</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Calificación</th>
       </tr>
     </thead>
     <tbody>
-      {passwords.map((password, index) => (
-        <tr
-          key={password._id}
-          className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}
-        >
-          <td className="border border-gray-200 px-4 py-2">{password.nombre}</td>
-          <td className="border border-gray-200 px-4 py-2">{password.tipo_elemento}</td>
-          <td className="border border-gray-200 px-4 py-2">
-            <a
-              href={password.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
+      {passwords.map((password) => (
+        <tr key={password._id}>
+          <td className="fw-bold">{password.nombre}</td>
+          <td>{password.tipo_elemento}</td>
+          <td>
+            <a href={password.url} target="_blank" rel="noopener noreferrer" className="text-decoration-none text-primary">
               {password.url}
             </a>
           </td>
-          <td className="border border-gray-200 px-4 py-2">{password.password}</td>
+          <td className="text-center">{password.password}</td>
         </tr>
       ))}
     </tbody>
   </table>
 </div>
-
 
 
 
