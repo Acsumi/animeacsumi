@@ -254,35 +254,33 @@ return (
     </div>
 
     {/* Tabla de contraseñas */}
-<div className="overflow-x-auto">
-  <table className="min-w-full table-auto bg-white shadow-lg rounded-lg border border-gray-300">
-    <thead className="bg-gradient-to-r from-green-400 to-blue-500 text-white">
+    <div>
+  <table>
+    <thead>
       <tr>
-        <th className="py-3 px-6 text-left text-sm font-bold uppercase tracking-wider">Título</th>
-        <th className="py-3 px-6 text-left text-sm font-bold uppercase tracking-wider hidden md:table-cell">Género</th>
-        <th className="py-3 px-6 text-left text-sm font-bold uppercase tracking-wider hidden lg:table-cell">Aplicación</th>
-        <th className="py-3 px-6 text-left text-sm font-bold uppercase tracking-wider">Calificación</th>
+        <th>Título</th>
+        <th>Género</th>
+        <th>Aplicación</th>
+        <th>Calificación</th>
       </tr>
     </thead>
     <tbody>
-      {passwords.map((password, index) => (
-        <tr
-          key={password._id}
-          className={`border-b border-gray-300 ${index % 2 === 0 ? "bg-gray-50" : "bg-white"} hover:bg-gray-200 transition duration-300`}
-        >
-          <td className="py-4 px-6 text-gray-800 font-medium">{password.nombre}</td>
-          <td className="py-4 px-6 text-gray-600 hidden md:table-cell">{password.tipo_elemento}</td>
-          <td className="py-4 px-6 text-blue-600 underline hidden lg:table-cell">
+      {passwords.map((password) => (
+        <tr key={password._id}>
+          <td>{password.nombre}</td>
+          <td>{password.tipo_elemento}</td>
+          <td>
             <a href={password.url} target="_blank" rel="noopener noreferrer">
               {password.url}
             </a>
           </td>
-          <td className="py-4 px-6 text-gray-800">{password.password}</td>
+          <td>{password.password}</td>
         </tr>
       ))}
     </tbody>
   </table>
 </div>
+
 
 
 
