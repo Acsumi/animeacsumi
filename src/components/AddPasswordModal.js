@@ -63,7 +63,7 @@ const AddPasswordModal = ({
               Aplicacion
             </label>
             <input
-              type="url"
+              type="text"
               name="url"
               id="url"
               placeholder="URL"

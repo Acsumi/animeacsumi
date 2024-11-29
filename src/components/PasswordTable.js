@@ -254,22 +254,21 @@ return (
     </div>
 
     {/* Tabla de contraseñas */}
-    <div className="overflow-x-auto">
-  <table className="min-w-full table-auto bg-gray-100 shadow-lg rounded-lg border border-gray-300">
+<div className="overflow-x-auto">
+  <table className="min-w-full table-auto bg-white shadow-lg rounded-lg border border-gray-300">
     <thead className="bg-gradient-to-r from-green-400 to-blue-500 text-white">
       <tr>
         <th className="py-3 px-6 text-left text-sm font-bold uppercase tracking-wider">Título</th>
         <th className="py-3 px-6 text-left text-sm font-bold uppercase tracking-wider hidden md:table-cell">Género</th>
         <th className="py-3 px-6 text-left text-sm font-bold uppercase tracking-wider hidden lg:table-cell">Aplicación</th>
         <th className="py-3 px-6 text-left text-sm font-bold uppercase tracking-wider">Calificación</th>
-        <th className="py-3 px-6 text-center text-sm font-bold uppercase tracking-wider">Acciones</th>
       </tr>
     </thead>
     <tbody>
       {passwords.map((password, index) => (
         <tr
           key={password._id}
-          className={`border-b border-gray-300 ${index % 2 === 0 ? "bg-white" : "bg-gray-50"} hover:bg-gray-200 transition duration-300`}
+          className={`border-b border-gray-300 ${index % 2 === 0 ? "bg-gray-50" : "bg-white"} hover:bg-gray-200 transition duration-300`}
         >
           <td className="py-4 px-6 text-gray-800 font-medium">{password.nombre}</td>
           <td className="py-4 px-6 text-gray-600 hidden md:table-cell">{password.tipo_elemento}</td>
@@ -278,38 +277,13 @@ return (
               {password.url}
             </a>
           </td>
-          {/* Calificación mostrada directamente */}
           <td className="py-4 px-6 text-gray-800">{password.password}</td>
-          <td className="py-4 px-6 text-center space-x-3 flex justify-center items-center">
-            <button
-              onClick={() => togglePasswordVisibility(password._id)}
-              className="text-gray-500 hover:text-blue-500"
-            >
-              {visiblePasswords[password._id] ? <IconEyeOff size={20} /> : <IconEye size={20} />}
-            </button>
-            <button
-              onClick={() => copyToClipboard(password.password, password._id)}
-              className={`text-gray-500 hover:text-green-500 ${
-                copiedPasswordId === password._id ? "text-green-500" : ""
-              }`}
-            >
-              {copiedPasswordId === password._id ? <IconCheck size={20} /> : <IconCopy size={20} />}
-            </button>
-            <button className="text-gray-500 hover:text-yellow-500">
-              <IconEdit size={20} />
-            </button>
-            <button
-              onClick={() => deletePassword(password._id)}
-              className="text-gray-500 hover:text-red-500"
-            >
-              <IconTrash size={20} />
-            </button>
-          </td>
         </tr>
       ))}
     </tbody>
   </table>
 </div>
+
 
 
 
